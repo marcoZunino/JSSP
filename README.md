@@ -24,4 +24,8 @@ Log de ejecuciones:
     
   - reformulacion con clases / objetos
 
+4/7:
+  - verificacion del valor de xtQx para las soluciones optimas
+  - resultados no optimos con el simulador
+
 
