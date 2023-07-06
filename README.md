@@ -3,13 +3,33 @@
 Log de ejecuciones:
 ---
 
+6/7:
+  - restricciones con clases (migracion a clases COMPLETA)
+  - calculo de penalidad para 4.1.1, 4.1.2, 4.2: P > 1950
+  - analisis de constantes para funciones cuadraticas para FO y Constraints
+  - FO + restricciones 4.1.1, 4.1.2, 4.2 (P = 2000):
+  - Resultados:
+    1) Gurobi: -58800 (factible) en 1.7s
+      - L{JB1,LAM1,M1,1} = 0.0
+      - L{JB1,LAM1,M1,2} = 4.0
+      - L{JB1,LAM2,M1,1} = 0.0
+      - L{JB1,LAM2,M1,2} = 4.0
+      - L{JB1,B1,M2} = 0.0
+      - L{JB1,B1,M3} = 4.0
+      - L{JB2,LAM1,M1} = 2.0
+      - L{JB2,B2,M2} = 2.0
+    2) SimulatedAnnealing: -43050 (no factible) con beta_range=(0.01, 7), reads=100 en 2m34s
+   
+
+
 5/7:
   - merge clases
   - resolucion con Gurobi
   - resolucion con simulador modificando beta_range (energia inicial y final)
-  - Resultados: (solo restricciones 4.1.1, 4.2)
+  - Resultados: (solo restricciones 4.1.1, 4.1.2, 4.2)
     1) Gurobi: solucion factible de -28 en 0.6s
     2) SimulatedAnnealing: solucion factible de -28 con beta_range=(0.01, 7), reads=150 en 1m30s
+
 
 4/7:
   - verificacion del valor de xtQx para las soluciones optimas
