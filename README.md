@@ -1,7 +1,13 @@
 # JSSP
 
-Log de ejecuciones:
+Log de avances:
 ---
+
+7/7:
+  - restricciones 4.3, 4.5, 4.6, 4.6.1
+  - analisis de penalidades y factibilidad
+  - malos resultados con el simulador para varias penalidades distintas
+
 
 6/7:
   - restricciones con clases (migracion a clases COMPLETA)
@@ -20,7 +26,6 @@ Log de ejecuciones:
       - L{JB2,B2,M2} = 2.0
     2) SimulatedAnnealing: -43050 (no factible) con beta_range=(0.01, 7), reads=100 en 2m34s
    
-
 
 5/7:
   - merge clases
