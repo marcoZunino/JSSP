@@ -1,7 +1,55 @@
 # JSSP
 
-Log de ejecuciones:
+Log de avances:
 ---
+
+10/7:
+  - correccion restriccion 4.6 (definicion de u_mk)
+  - FO + restricciones 4.1.1, 4.1.2, 4.2, 4.5, 4.6, 4.6.1 (P = 2000):
+  - Resultados:
+    1) Gurobi: -196600 en 15.1s
+      - L{JB1,LAM1,M1,1} = 0.0
+      - L{JB1,LAM1,M1,2} = 4.0
+      - L{JB1,LAM2,M1,1} = 0.0
+      - L{JB1,LAM2,M1,2} = 4.0
+      - L{JB1,B1,M2} = 0.0
+      - L{JB1,B1,M3} = 4.0
+      - L{JB2,LAM1,M1} = 2.0
+      - L{JB2,B2,M2} = 2.0
+      - bz{L{JB1,LAM1,M1,1}} = 1.0
+      - bz{L{JB1,LAM1,M1,2}} = -0.0
+      - bz{L{JB1,LAM2,M1,1}} = 1.0
+      - bz{L{JB1,LAM2,M1,2}} = 0.0
+      - bz{L{JB1,B1,M2}} = 1.0
+      - bz{L{JB1,B1,M3}} = 0.0
+      - bz{L{JB2,LAM1,M1}} = 0.0
+      - bz{L{JB2,B2,M2}} = 0.0
+      - X^M1 =
+      - [[0 0 0 0 0]
+       - [0 1 0 0 0]
+       - [0 0 0 0 0]
+       - [1 0 0 0 0]
+       - [0 0 1 0 0]]
+      - X^M2 =
+      - [[0 0]
+       - [1 0]]
+      - X^M3 =
+      - [[1]]
+      - u_{M1,1} = 1.0
+      - u_{M1,2} = 1.0
+      - u_{M1,3} = 1.0
+      - u_{M1,4} = 0.0
+      - u_{M1,5} = 0.0
+      - u_{M2,1} = 1.0
+      - u_{M2,2} = -0.0
+      - u_{M3,1} = 1.0
+
+
+7/7:
+  - restricciones 4.3, 4.5, 4.6, 4.6.1
+  - analisis de penalidades y factibilidad
+  - malos resultados con el simulador para varias penalidades distintas
+
 
 6/7:
   - restricciones con clases (migracion a clases COMPLETA)
@@ -20,7 +68,6 @@ Log de ejecuciones:
       - L{JB2,B2,M2} = 2.0
     2) SimulatedAnnealing: -43050 (no factible) con beta_range=(0.01, 7), reads=100 en 2m34s
    
-
 
 5/7:
   - merge clases
