@@ -3,6 +3,12 @@
 Log de avances:
 ---
 
+13/7:
+  - restricciones 4.7.1, 4.7.1.1
+  - ejecucion con restricciones 4.1.1, 4.1.2, 4.2, 4.3, 4.5, 4.6, 4.6.1, 4.7.1, 4.7.1.1 (P = 2000):
+    1) Gurobi: tiempo maximo excedido (2 min)
+    2) Dwave Leap: falta comprobar solucion obtenida
+
 10/7:
   - correccion restriccion 4.6 (definicion de u_mk)
   - FO + restricciones 4.1.1, 4.1.2, 4.2, 4.5, 4.6, 4.6.1 (P = 2000):
