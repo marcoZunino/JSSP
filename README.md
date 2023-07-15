@@ -3,11 +3,115 @@
 Log de avances:
 ---
 
+15/7:
+  - ejecucion con restricciones 4.1.1, 4.1.2, 4.2, 4.3, 4.5, 4.6, 4.6.1, 4.7.1, 4.7.1.1 (P = 2000):
+    1) Dwave: -327700.0
+      - S{JB1,LAM1,M1,1} = 2
+      - S{JB1,LAM1,M1,2} = 0
+      - S{JB1,LAM2,M1,1} = 1
+      - S{JB1,LAM2,M1,2} = 0
+      - S{JB1,B1,M2} = 12
+      - S{JB1,B1,M3} = 10
+      - S{JB2,LAM1,M1} = 0
+      - S{JB2,B2,M2} = 2
+      - L{JB1,LAM1,M1,1} = 1
+      - L{JB1,LAM1,M1,2} = 4
+      - L{JB1,LAM2,M1,1} = 4
+      - L{JB1,LAM2,M1,2} = 6
+      - L{JB1,B1,M2} = 2
+      - L{JB1,B1,M3} = 0
+      - L{JB2,LAM1,M1} = 0
+      - L{JB2,B2,M2} = 3
+      - E{JB1} = 10
+      - E{JB2} = 8
+      - d{JB1} = 0
+      - d{JB2} = 0
+      - bz{L{JB1,LAM1,M1,1}} = 0
+      - bz{L{JB1,LAM1,M1,2}} = 0
+      - bz{L{JB1,LAM2,M1,1}} = 0
+      - bz{L{JB1,LAM2,M1,2}} = 0
+      - bz{L{JB1,B1,M2}} = 1
+      - bz{L{JB1,B1,M3}} = 0
+      - bz{L{JB2,LAM1,M1}} = 1
+      - bz{L{JB2,B2,M2}} = 0
+      - X^M1 =
+        - [[0 1 0 0 1]
+        - [1 1 0 0 0]
+        - [0 0 0 0 1]
+        - [0 0 0 0 1]
+        - [1 1 1 0 0]]
+      - X^M2 =
+        - [[1 1]
+        - [0 0]]
+      - X^M3 =
+        - [[0]]
+      - u_{M1,1} = 1
+      - u_{M1,2} = 1
+      - u_{M1,3} = 0
+      - u_{M1,4} = 1
+      - u_{M1,5} = 1
+      - u_{M2,1} = 0
+      - u_{M2,2} = 0
+      - u_{M3,1} = 1
+    2) Gurobi: -722100 en 4 min
+      - S{JB1,LAM1,M1,1} = 0.0
+      - S{JB1,LAM1,M1,2} = 4.0
+      - S{JB1,LAM2,M1,1} = 1.0
+      - S{JB1,LAM2,M1,2} = 2.0
+      - S{JB1,B1,M2} = 5.0
+      - S{JB1,B1,M3} = 9.0
+      - S{JB2,LAM1,M1} = 2.0
+      - S{JB2,B2,M2} = 7.0
+      - L{JB1,LAM1,M1,1} = 3.0
+      - L{JB1,LAM1,M1,2} = 1.0
+      - L{JB1,LAM2,M1,1} = 3.0
+      - L{JB1,LAM2,M1,2} = 1.0
+      - L{JB1,B1,M2} = 3.0
+      - L{JB1,B1,M3} = 1.0
+      - L{JB2,LAM1,M1} = 2.0
+      - L{JB2,B2,M2} = 2.0
+      - E{JB1} = 10.0
+      - E{JB2} = 11.0
+      - d{JB1} = 1.0
+      - d{JB2} = 1.0
+      - bz{L{JB1,LAM1,M1,1}} = 0.0
+      - bz{L{JB1,LAM1,M1,2}} = 0.0
+      - bz{L{JB1,LAM2,M1,1}} = 0.0
+      - bz{L{JB1,LAM2,M1,2}} = 0.0
+      - bz{L{JB1,B1,M2}} = 0.0
+      - bz{L{JB1,B1,M3}} = 0.0
+      - bz{L{JB2,LAM1,M1}} = 0.0
+      - bz{L{JB2,B2,M2}} = 0.0
+      - X^M1 =
+        - [[0 0 0 0 1]
+        - [1 0 0 0 0]
+        - [0 0 0 1 0]
+        - [0 0 1 0 0]
+        - [0 1 0 0 0]]
+      - X^M2 =
+        - [[0 1]
+        - [1 0]]
+      - X^M3 =
+        - [[1]]
+      - u_{M1,1} = 1.0
+      - u_{M1,2} = 1.0
+      - u_{M1,3} = 1.0
+      - u_{M1,4} = 1.0
+      - u_{M1,5} = 1.0
+      - u_{M2,1} = 1.0
+      - u_{M2,2} = 1.0
+      - u_{M3,1} = 1.0
+    
+Sugerencia para Gurobi: poner un limite de tiempo bajo (30s) pero correrlo varias veces      
+
+
 13/7:
   - restricciones 4.7.1, 4.7.1.1
   - ejecucion con restricciones 4.1.1, 4.1.2, 4.2, 4.3, 4.5, 4.6, 4.6.1, 4.7.1, 4.7.1.1 (P = 2000):
-    1) Gurobi: tiempo maximo excedido (2 min)
-    2) Dwave Leap: falta comprobar solucion obtenida
+    1) Gurobi: tiempo maximo excedido (2 min): -722000.0
+    2) Dwave: falta comprobar solucion obtenida
+    3) "A mano": optimo de -724000
+
 
 10/7:
   - correccion restriccion 4.6 (definicion de u_mk)
@@ -31,16 +135,16 @@ Log de avances:
       - bz{L{JB2,LAM1,M1}} = 0.0
       - bz{L{JB2,B2,M2}} = 0.0
       - X^M1 =
-      - [[0 0 0 0 0]
-       - [0 1 0 0 0]
-       - [0 0 0 0 0]
-       - [1 0 0 0 0]
-       - [0 0 1 0 0]]
+        - [[0 0 0 0 0]
+        - [0 1 0 0 0]
+        - [0 0 0 0 0]
+        - [1 0 0 0 0]
+        - [0 0 1 0 0]]
       - X^M2 =
-      - [[0 0]
-       - [1 0]]
+        - [[0 0]
+        - [1 0]]
       - X^M3 =
-      - [[1]]
+        - [[1]]
       - u_{M1,1} = 1.0
       - u_{M1,2} = 1.0
       - u_{M1,3} = 1.0
