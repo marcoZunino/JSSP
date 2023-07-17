@@ -2,6 +2,11 @@
 
 Log de avances:
 ---
+17/7
+  - restricciones 4.8.1, 4.9.1, 4.9.2, 4.9.3
+  - soluciones poco optimas para Gurobi
+  - error de embedding en Dwave
+
 
 15/7:
   - ejecucion con restricciones 4.1.1, 4.1.2, 4.2, 4.3, 4.5, 4.6, 4.6.1, 4.7.1, 4.7.1.1 (P = 2000):
@@ -101,14 +106,12 @@ Log de avances:
       - u_{M2,1} = 1.0
       - u_{M2,2} = 1.0
       - u_{M3,1} = 1.0
-    
-Sugerencia para Gurobi: poner un limite de tiempo bajo (30s) pero correrlo varias veces      
 
 
 13/7:
   - restricciones 4.7.1, 4.7.1.1
   - ejecucion con restricciones 4.1.1, 4.1.2, 4.2, 4.3, 4.5, 4.6, 4.6.1, 4.7.1, 4.7.1.1 (P = 2000):
-    1) Gurobi: tiempo maximo excedido (2 min): -722000.0
+    1) Gurobi: tiempo maximo excedido (20 min): -722000.0
     2) Dwave: falta comprobar solucion obtenida
     3) "A mano": optimo de -724000
 
