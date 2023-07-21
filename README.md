@@ -2,9 +2,66 @@
 
 Log de avances:
 ---
+19/7
+  - se agrega restriccion de precedencia para los bz (4.1.1.1)
+  - se modifica la restriccion de precedencia de cantidades (4.1.2) para permitir producir de sobra (se agregan slacks)
+  - chequeo de factibilidad mediante seguimiento de constantes 
+  - Resultados: (con estos cambios y sin considerar la restriccion de no superposicion)
+    1) Gurobi: -724800 (7700 si se considera la constante total de xtQx) en 6 horas
+      FACTIBLE PERO NO ÓPTIMO
+      - S{JB1,LAM1,M1,1} = 4.0
+      - S{JB1,LAM1,M1,2} = 0.0
+      - S{JB1,LAM2,M1,1} = 0.0
+      - S{JB1,LAM2,M1,2} = 4.0
+      - S{JB1,B1,M2} = 8.0
+      - S{JB1,B1,M3} = 8.0
+      - S{JB2,LAM1,M1} = 1.0
+      - S{JB2,B2,M2} = 7.0
+      - L{JB1,LAM1,M1,1} = 0.0
+      - L{JB1,LAM1,M1,2} = 4.0
+      - L{JB1,LAM2,M1,1} = 0.0
+      - L{JB1,LAM2,M1,2} = 4.0
+      - L{JB1,B1,M2} = 0.0
+      - L{JB1,B1,M3} = 4.0
+      - L{JB2,LAM1,M1} = 2.0
+      - L{JB2,B2,M2} = 2.0
+      - E{JB1} = 12.0
+      - E{JB2} = 11.0
+      - d{JB1} = 0.0
+      - d{JB2} = 1.0
+      - bz{L{JB1,LAM1,M1,1}} = 1.0
+      - bz{L{JB1,LAM1,M1,2}} = 0.0
+      - bz{L{JB1,LAM2,M1,1}} = 1.0
+      - bz{L{JB1,LAM2,M1,2}} = 0.0
+      - bz{L{JB1,B1,M2}} = 1.0
+      - bz{L{JB1,B1,M3}} = 0.0
+      - bz{L{JB2,LAM1,M1}} = 0.0
+      - bz{L{JB2,B2,M2}} = 0.0
+      - X^M1 =
+        - [[0 0 0 0 0]
+        - [0 0 1 0 0]
+        - [0 0 0 0 0]
+        - [1 0 0 0 0]
+        - [0 1 0 0 0]]
+      - X^M2 =
+        - [[0 0]
+        - [1 0]]
+      - X^M3 =
+        - [[1]]
+      - u_{M1,1} = 1.0
+      - u_{M1,2} = 1.0
+      - u_{M1,3} = 1.0
+      - u_{M1,4} = 0.0
+      - u_{M1,5} = 0.0
+      - u_{M2,1} = 1.0
+      - u_{M2,2} = 0.0
+      - u_{M3,1} = 1.0
+    2) Dwave: error de embedding
+
+
 17/7
   - restricciones 4.8.1, 4.9.1, 4.9.2, 4.9.3
-  - soluciones poco optimas para Gurobi
+  - soluciones poco optimas y no factibles para Gurobi
   - error de embedding en Dwave
 
 
